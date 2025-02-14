@@ -1,0 +1,130 @@
+---
+import Layout from '../layouts/Layout.astro';
+import LinkedinIcon from '../components/icons/linkedin.astro';
+import GithubIcon from '../components/icons/github.astro';
+import GmailIcon from '../components/icons/gmail.astro';
+---
+
+<Layout title="Portafolio Luis Tapia">
+	<main class="pb-12">
+		<section class="w-full mx-auto lg:w-[740px] py-44">
+			<h2 class="text-7xl font-light flex justify-center text-center flex-row text-[#51F9F1]">Software Developer</h2>
+			<h1 class="text-8xl font-light flex justify-center text-center">Luis Tapia</h1>
+			<div class="mt-4 flex mx-auto w-full justify-center gap-6"> 
+				<a href="https://www.linkedin.com/in/luis-tapia-aaa2691a3/"><LinkedinIcon class="size-14 rounded-full"/></a>
+				<a href="https://github.com/Tapia-GJ"><GithubIcon class="size-14 rounded-full"/></a>
+				<!-- <GmailIcon class="size-14" /> -->
+			</div>
+			<div class="m-6 flex mx-auto w-full justify-center gap-6">
+				<a href="/static/Luis Tapia CV.pdf" download="Luis Tapia CV.pdf" class="text-black h-10 w-40 font-light bg-[#51F9F1] hover:bg-[#48bcb6] rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center">
+					<svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mr-2 icon icon-tabler icons-tabler-outline icon-tabler-download">
+					  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+					  <path d="M4 17v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2 -2v-2" />
+					  <path d="M7 11l5 5l5 -5" />
+					  <path d="M12 4l0 12" />
+					</svg>
+					Descargar CV
+				  </a>
+				<button onclick="location.href ='https://www.linkedin.com/in/luis-tapia-aaa2691a3/'" type="button" class="text-black h-10 w-40 font-light bg-[#51F9F1] hover:bg-[#48bcb6] rounded-lg text-sm px-5 py-2.5 text-center justify-center inline-flex items-center">
+					Contáctame
+					<svg class="rtl:rotate-180 w-3.5 h-3.5 ms-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
+					<path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9"/>
+					</svg>
+				</button>
+			</div>
+		</section>
+		<!-- Proyectos -->
+		<section id="proyectos" class="w-full mx-auto lg:w-[740px] py-24 px-4">
+			<h1 class="text-3xl font-light mb-8">Proyectos</h1>
+			<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+				<!-- Proyecto 1 -->
+				<div class="bg-[#1a1a1a] p-6 rounded-lg hover:border hover:border-[#51F9F1] transition-all">
+					<h3 class="text-2xl font-light text-[#51F9F1] mb-2">Sistema de Gestión de Empresarial con control de Herramientas y Servicios</h3>
+					<img src="/static/TallerCastillo.jpeg" alt="Taller Castillo" class="w-full rounded-lg mb-4">
+					<p class="text-gray-300 mb-4">Desarrollo de un sistema integral que incluye módulos para gestión de empresas clientes, control de herramientas, inventario, servicios y tareas pendientes.</p>
+					<div class="flex flex-wrap gap-2 mb-4">
+						<span class="px-3 py-1 bg-[#2d2d2d] rounded-full text-sm">Fullstack</span>
+						<span class="px-3 py-1 bg-[#2d2d2d] rounded-full text-sm">React</span>
+						<span class="px-3 py-1 bg-[#2d2d2d] rounded-full text-sm">NestJS</span>
+						<span class="px-3 py-1 bg-[#2d2d2d] rounded-full text-sm">MySQL</span>
+					</div>
+					
+					<div class="flex gap-4 ">
+						<a href="proyectoTaller" class="flex items-center text-[#51F9F1] hover:text-[#48bcb6] transition-colors">
+							<svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/>
+							</svg>
+							Más
+						</a>
+						<a href="https://github.com/Tapia-GJ/TallerCastillo" class="flex items-center text-[#51F9F1] hover:text-[#48bcb6] transition-colors">
+							<GithubIcon class="w-5 h-5 mr-1"/>
+							Código
+						</a>
+					</div>
+				</div>
+		
+				<!-- Proyecto 2 -->
+				<div class="bg-[#1a1a1a] p-6 rounded-lg hover:border hover:border-[#51F9F1] transition-all">
+					<h3 class="text-2xl font-light text-[#51F9F1] mb-2">Sistema Academia</h3>
+					<img src="/static/Academia.png" alt="Taller Castillo" class="w-full rounded-lg mb-4">
+					<p class="text-gray-300 mb-4">Plataforma web donde los alumnos pueden consultar sus calificaciones y asignaturas, los profesores gestionar las notas de sus estudiantes y los administradores controlar la información de alumnos y profesores.</p>
+					
+					<div class="flex flex-wrap gap-2 mb-4">
+						<span class="px-3 py-1 bg-[#2d2d2d] rounded-full text-sm">Fullstack</span>
+						<span class="px-3 py-1 bg-[#2d2d2d] rounded-full text-sm">PHP</span>
+						<span class="px-3 py-1 bg-[#2d2d2d] rounded-full text-sm">HTML</span>
+						<span class="px-3 py-1 bg-[#2d2d2d] rounded-full text-sm">CSS</span>
+						<span class="px-3 py-1 bg-[#2d2d2d] rounded-full text-sm">MySQL</span>
+					</div>
+					
+					<div class="flex gap-4 ">
+						<a href="proyectoAcademia" class="flex items-center text-[#51F9F1] hover:text-[#48bcb6] transition-colors">
+							<svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/>
+							</svg>
+							Más
+						</a>
+						<a href="https://github.com/Tapia-GJ/SistemaAcademia" class="flex items-center text-[#51F9F1] hover:text-[#48bcb6] transition-colors">
+							<GithubIcon class="w-5 h-5 mr-1"/>
+							Código
+						</a>
+					</div>
+				</div>
+				<!-- Proyecto 3 -->
+				<div class="bg-[#1a1a1a] p-6 rounded-lg hover:border hover:border-[#51F9F1] transition-all">
+					<h3 class="text-2xl font-light text-[#51F9F1] mb-2">App Web Registro de Lesiones</h3>
+					<img src="/static/TerapiaFisica.png" alt="Taller Castillo" class="w-full rounded-lg mb-4">
+					<p class="text-gray-300 mb-4">Plataforma web donde los usuarios pueden registrar sus lesiones y consultar las que tienen asignadas.</p>
+					
+					<div class="flex flex-wrap gap-2 mb-4">
+						<span class="px-3 py-1 bg-[#2d2d2d] rounded-full text-sm">Frontend</span>
+						<span class="px-3 py-1 bg-[#2d2d2d] rounded-full text-sm">Python</span>
+						<span class="px-3 py-1 bg-[#2d2d2d] rounded-full text-sm">Flask</span>
+						<span class="px-3 py-1 bg-[#2d2d2d] rounded-full text-sm">HTML</span>
+						<span class="px-3 py-1 bg-[#2d2d2d] rounded-full text-sm">CSS</span>
+						<span class="px-3 py-1 bg-[#2d2d2d] rounded-full text-sm">MySQL</span>
+					</div>
+					
+					<div class="flex gap-4">
+						<a href="/proyectoTerapia" class="flex items-center text-[#51F9F1] hover:text-[#48bcb6] transition-colors">
+							<svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/>
+							</svg>
+							Más
+						</a>
+						<a href="https://github.com/Tapia-GJ/SistemaAcademia" class="flex items-center text-[#51F9F1] hover:text-[#48bcb6] transition-colors">
+							<GithubIcon class="w-5 h-5 mr-1"/>
+							Código
+						</a>
+					</div>
+				</div>
+			</div>
+		</section>
+		<!-- <section class="w-full mx-auto lg:w-[740px]">
+			<h1 class="text-3xl font-light flex flex-row">Habilidades</h1>
+		</section>
+		<section class="w-full mx-auto lg:w-[740px]">
+			<h1 class="text-3xl font-light flex flex-row">Sobre Mí</h1>
+		</section> -->
+	</main>
+</Layout>

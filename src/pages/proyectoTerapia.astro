@@ -1,0 +1,54 @@
+---
+import Layout from '../layouts/Layout.astro';
+import LinkedinIcon from '../components/icons/linkedin.astro';
+import GithubIcon from '../components/icons/github.astro';
+import GmailIcon from '../components/icons/gmail.astro';
+---
+
+<Layout title="Portafolio Luis Tapia">
+    <main>
+        <section class="w-full mx-auto lg:w-[740px] py-24 px-4">
+            <h1 class="text-4xl font-medium text-center text-[#51F9F1] mb-2">Sistema Academia</h1>
+            <div class="flex flex-wrap gap-2 mb-8 justify-center text-lg text-gray-300">
+                <span class="px-3 py-1 bg-[#2d2d2d] rounded-full text-sm">Frontend</span>
+				<span class="px-3 py-1 bg-[#2d2d2d] rounded-full text-sm">Python</span>
+				<span class="px-3 py-1 bg-[#2d2d2d] rounded-full text-sm">Flask</span>
+				<span class="px-3 py-1 bg-[#2d2d2d] rounded-full text-sm">HTML</span>
+				<span class="px-3 py-1 bg-[#2d2d2d] rounded-full text-sm">CSS</span>
+				<span class="px-3 py-1 bg-[#2d2d2d] rounded-full text-sm">MySQL</span>
+            </div>
+            <img src="/static/TerapiaFisica.png" alt="Registro de Lesiones" class="w-full mb-4">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 ">
+                <img src="/static/terapia1.png" alt="Registro de Lesiones" class="w-full">
+                <img src="/static/terapia2.png" alt="Registro de Lesiones" class="w-full">
+            </div>
+            <div class="space-y-8">
+                <section>
+                    <h2 class="text-2xl text-[#51F9F1] mb-4">Descripción</h2>
+                    <p class="text-gray-300">
+                        Me encargue de darle una interfaz intuitiva a un sistema de terapia fisica para que los usuarios puedan registrar sus lesiones y recibir un informe de las mismas.
+                    </p>
+                </section>
+
+                <section>
+                    <h2 class="text-2xl text-[#51F9F1] mb-4">Tecnologías Clave</h2>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-gray-300">
+                        <div>
+                            <p class="font-medium">Frontend:</p>
+                            <p>HTML Y CSS con diseño intuitivo</p>
+                        </div>
+                        <div>
+                            <p class="font-medium">Backend:</p>
+                            <p>Python con Flask</p>
+                        </div>
+                        <div>
+                            <p class="font-medium">Base de datos:</p>
+                            <p>Relacional (SQL)</p>
+                        </div>
+                    </div>
+                </section>
+
+            </div>
+        </section>
+    </main>
+</Layout>

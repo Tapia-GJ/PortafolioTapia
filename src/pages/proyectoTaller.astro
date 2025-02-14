@@ -1,0 +1,65 @@
+---
+import Layout from '../layouts/Layout.astro';
+import LinkedinIcon from '../components/icons/linkedin.astro';
+import GithubIcon from '../components/icons/github.astro';
+import GmailIcon from '../components/icons/gmail.astro';
+---
+
+<Layout title="Portafolio Luis Tapia">
+    <main>
+        <section class="w-full mx-auto lg:w-[740px] py-24 px-4">
+            <h1 class="text-4xl font-medium text-center text-[#51F9F1] mb-2">Sistema Integral de Gestión para Taller Mecánico</h1>
+            <div class="flex flex-wrap gap-2 mb-8 justify-center text-lg text-gray-300">
+                <span class="px-3 py-1 bg-[#2d2d2d] rounded-full text-sm">Fullstack Developer</span>
+                <span class="px-3 py-1 bg-[#2d2d2d] rounded-full text-sm">React</span>
+                <span class="px-3 py-1 bg-[#2d2d2d] rounded-full text-sm">NestJS</span>
+                <span class="px-3 py-1 bg-[#2d2d2d] rounded-full text-sm">MySQL</span>
+            </div>
+            <img src="/static/TallerCastillo.jpeg" alt="Taller Castillo" class="w-full rounded-lg mb-8">
+
+            <div class="space-y-8">
+                <section>
+                    <h2 class="text-2xl text-[#51F9F1] mb-4">Módulos Principales</h2>
+                    <ul class="space-y-3 text-gray-300">
+                        <li class="flex items-center"><span class="mr-2">✅</span>Gestión de clientes empresariales (datos, contactos, historial)</li>
+                        <li class="flex items-center"><span class="mr-2">✅</span>Control de herramientas (inventario en tiempo real y seguimiento de activos)</li>
+                        <li class="flex items-center"><span class="mr-2">✅</span>Administración de servicios (precios variables por cliente y códigos técnicos)</li>
+                        <li class="flex items-center"><span class="mr-2">✅</span>Módulo de pendientes (seguimiento de tareas operativas)</li>
+                    </ul>
+                </section>
+
+                <section>
+                    <h2 class="text-2xl text-[#51F9F1] mb-4">Tecnologías Clave</h2>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-gray-300">
+                        <div>
+                            <p class="font-medium">Frontend:</p>
+                            <p>React con interfaz intuitiva</p>
+                        </div>
+                        <div>
+                            <p class="font-medium">Backend:</p>
+                            <p>API REST con NestJS</p>
+                        </div>
+                        <div>
+                            <p class="font-medium">Base de datos:</p>
+                            <p>Relacional (SQL)</p>
+                        </div>
+                        <div>
+                            <p class="font-medium">Metodología:</p>
+                            <p>Kanban</p>
+                        </div>
+                    </div>
+                </section>
+
+                <section>
+                    <h2 class="text-2xl text-[#51F9F1] mb-4">Logros Destacados</h2>
+                    <ul class="space-y-3 text-gray-300">
+                        <li class="flex items-center"><span class="mr-2">✔️</span>Centralización de procesos administrativos</li>
+                        <li class="flex items-center"><span class="mr-2">✔️</span>Reducción de pérdidas por mal uso de herramientas</li>
+                        <li class="flex items-center"><span class="mr-2">✔️</span>Sistema adaptable a necesidades específicas</li>
+                    </ul>
+                </section>
+
+            </div>
+        </section>
+    </main>
+</Layout>
