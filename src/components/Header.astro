@@ -1,20 +1,43 @@
-
-<header class="flex justify-between items-center py-3 w-[1120px] mx-auto">
+<header class="flex flex-wrap items-center justify-between py-3 w-full max-w-[1120px] mx-auto px-6">
+    <!-- Perfil -->
     <div class="flex items-center gap-4">
-        <img 
-        src="../static/ProfileTapia.jpeg" 
+      <img
+        src="../static/ProfileTapia.jpeg"
         class="rounded-full size-10"
-        alt="Tapia.jpg">
-        <div class="flex flex-col">
-          <p class="font-light text-sm">Luis Tapia</p>
-          <p class="font-light text-xs">Software Developer</p>
-        </div>
+        alt="Tapia.jpg"
+      />
+      <div class="flex flex-col">
+        <p class="font-light text-sm">Luis Tapia</p>
+        <p class="font-light text-xs">Software Developer</p>
+      </div>
     </div>
-    
-    <nav class="flex flex-row gap-x-10 opacity-90">
-        <a href="/">Inicio</a>
-        <a href="#proyectos">Proyectos</a>
-        <a href="/">Sobre mí</a>
-        <a href="/">Habilidades</a>
+  
+    <!-- Menú hamburguesa con input toggle -->
+    <div class="md:hidden">
+      <input type="checkbox" id="menu-toggle" class="hidden peer" />
+      <label for="menu-toggle" class="cursor-pointer">
+        <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" stroke-width="2"
+             viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round"
+                d="M4 6h16M4 12h16M4 18h16" />
+        </svg>
+      </label>
+  
+      <!-- Menú móvil -->
+      <div class="flex-col mt-4 hidden peer-checked:flex">
+        <a href="/" class="py-2">Inicio</a>
+        <a href="#proyectos" class="py-2">Proyectos</a>
+        <a href="/" class="py-2">Sobre mí</a>
+        <a href="/" class="py-2">Habilidades</a>
+      </div>
+    </div>
+  
+    <!-- Menú escritorio -->
+    <nav class="hidden md:flex flex-row gap-x-10 opacity-90">
+      <a href="/">Inicio</a>
+      <a href="#proyectos">Proyectos</a>
+      <a href="/">Sobre mí</a>
+      <a href="/">Habilidades</a>
     </nav>
-</header>
+  </header>
+  
