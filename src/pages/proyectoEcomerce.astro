@@ -1,0 +1,81 @@
+---
+import Layout from '../layouts/Layout.astro';
+import LinkedinIcon from '../components/icons/linkedin.astro';
+import GithubIcon from '../components/icons/github.astro';
+import GmailIcon from '../components/icons/gmail.astro';
+---
+
+<Layout title="Portafolio Luis Tapia">
+    <main>
+        <section class="w-full mx-auto lg:w-[740px] py-24 px-4">
+            <h1 class="text-4xl font-medium text-center text-[#51F9F1] mb-2">Ecommerce de Pines y Llaveros</h1>
+            <div class="flex flex-wrap gap-2 mb-8 justify-center text-lg text-gray-300">
+                <span class="px-3 py-1 bg-[#2d2d2d] rounded-full text-sm">Fullstack</span>
+                <span class="px-3 py-1 bg-[#2d2d2d] rounded-full text-sm">TypeScript</span>
+                <span class="px-3 py-1 bg-[#2d2d2d] rounded-full text-sm">React</span>
+                <span class="px-3 py-1 bg-[#2d2d2d] rounded-full text-sm">TailwindCSS</span>
+                <span class="px-3 py-1 bg-[#2d2d2d] rounded-full text-sm">Supabase</span>
+                <span class="px-3 py-1 bg-[#2d2d2d] rounded-full text-sm">Mercado Pago</span>
+            </div>
+
+            <img src="/static/ecomercePines.png" alt="Ecommerce Pines y Llaveros" class="w-full rounded-lg mb-8 " />
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 pb-12">
+                <img src="/static/ecomercePines3.png" alt="Registro de Lesiones" class="w-full lg:h-[180px] rounded-lg">
+                <img src="/static/ecomercePines4.png" alt="Registro de Lesiones" class="w-full lg:h-[180px] rounded-lg">
+            </div>
+            <div class="space-y-8">
+
+                <section>
+                    <h2 class="text-2xl text-[#51F9F1] mb-4">Descripción</h2>
+                    <p class="text-gray-300">
+                        Aplicación web fullstack desarrollada para la venta de pines y llaveros personalizados. La plataforma permite explorar productos, gestionar el carrito, realizar compras seguras mediante Mercado Pago y acceder a una experiencia de usuario fluida y moderna.
+                    </p>
+                </section>
+
+                <section>
+                    <h2 class="text-2xl text-[#51F9F1] mb-4">Módulos Principales</h2>
+                    <ul class="space-y-3 text-gray-300">
+                        <li class="flex items-center"><span class="mr-2">✅</span>Catálogo de productos con imágenes y precios</li>
+                        <li class="flex items-center"><span class="mr-2">✅</span>Gestión de carrito con edición de cantidades</li>
+                        <li class="flex items-center"><span class="mr-2">✅</span>Pasarela de pago integrada con Mercado Pago</li>
+                        <li class="flex items-center"><span class="mr-2">✅</span>Autenticación de usuarios (login, registro)</li>
+                        <li class="flex items-center"><span class="mr-2">✅</span>Panel de usuario para seguimiento de pedidos</li>
+                    </ul>
+                </section>
+
+                <section>
+                    <h2 class="text-2xl text-[#51F9F1] mb-4">Tecnologías Clave</h2>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-gray-300">
+                        <div>
+                            <p class="font-medium">Frontend:</p>
+                            <p>React + TypeScript + TailwindCSS</p>
+                        </div>
+                        <div>
+                            <p class="font-medium">Backend y base de datos:</p>
+                            <p>Supabase (Auth, Database y Storage)</p>
+                        </div>
+                        <div>
+                            <p class="font-medium">Pasarela de pago:</p>
+                            <p>Mercado Pago (API de checkout)</p>
+                        </div>
+                        <div>
+                            <p class="font-medium">Diseño responsive:</p>
+                            <p>TailwindCSS</p>
+                        </div>
+                    </div>
+                </section>
+
+                <section>
+                    <h2 class="text-2xl text-[#51F9F1] mb-4">Logros Destacados</h2>
+                    <ul class="space-y-3 text-gray-300">
+                        <li class="flex items-center"><span class="mr-2">✔️</span>Implementación completa del flujo de compra con integración real a Mercado Pago</li>
+                        <li class="flex items-center"><span class="mr-2">✔️</span>Diseño moderno, minimalista y 100% responsive</li>
+                        <li class="flex items-center"><span class="mr-2">✔️</span>Persistencia de sesión y carrito de compras con Supabase</li>
+                        <li class="flex items-center"><span class="mr-2">✔️</span>Despliegue funcional de una tienda lista para producción</li>
+                    </ul>
+                </section>
+
+            </div>
+        </section>
+    </main>
+</Layout>

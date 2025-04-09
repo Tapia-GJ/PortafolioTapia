@@ -1,0 +1,78 @@
+<!-- ---
+const TECNOLOGIAS = {
+    RegistroLesiones: {
+        Frontend: "HTML Y CSS con diseño intuitivo",
+        backend: "Python con Flask",
+        base: "Relacional (MySQL)",
+    },
+}
+
+const PROJECTS = [
+  {
+    title: "App Web Registro de Lesiones",
+    description:
+      "Colaboré en el desarrollo de una aplicación web para registro, visualización y generación de informes de pacientes, optimizando los procesos administrativos en una clínica. Diseñé una interfaz intuitiva para facilitar el registro de lesiones y la generación de reportes.",
+    link: "https://svgl.vercel.app/",
+    github: "https://github.com/pheralb/svgl",
+    modulos: ["Miembro Superior", "Miembro Inferior", "Cabeza y Tórax", "Notas de Seguimiento", "Plan de Tratamiento"],
+    tecnologias: TECNOLOGIAS.RegistroLesiones,
+    logros: ["Optimización del registro y consulta de pacientes", "Mejora en la gestión de informes clínicos", "Interfaz intuitiva y fácil de usar"],
+    image: "/static/TerapiaFisica.png",
+    tags: ["Frontend", "Python", "Flask", "HTML", "CSS", "MySQL"],
+  },
+]
+---
+        {PROJECTS.map(({ title, description, link, github, image, modulos, tecnologias, logros, tags }) => (
+            <h1 class="text-4xl font-medium text-center text-[#51F9F1] mb-2">{title}</h1>
+            <div class="flex flex-wrap gap-2 mb-8 justify-center text-lg text-gray-300">
+                {tags.map((tag) => (
+                <span class="px-3 py-1 bg-[#2d2d2d] rounded-full text-sm">{tag}</span>
+                ))}
+            </div>
+            <img src={image} alt="Registro de Lesiones" class="w-full mb-4">
+            <div class="space-y-8">
+                <section>
+                    <h2 class="text-2xl text-[#51F9F1] mb-4">Descripción</h2>
+                    <p class="text-gray-300">
+                        {description}
+                    </p>
+                </section>
+
+                <section>
+                    <h2 class="text-2xl text-[#51F9F1] mb-4">Módulos Principales (Formularios):</h2>
+                    <ul class="space-y-3 text-gray-300">
+                        {modulos.map((modulo) => (
+                        <li class="flex items-center"><span class="mr-2">✅</span>{modulo}</li>
+                        ))}
+                    </ul>
+                </section>
+
+                <section>
+                    <h2 class="text-2xl text-[#51F9F1] mb-4">Tecnologías Clave</h2>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-gray-300">
+                        <div>
+                            <p class="font-medium">Frontend:</p>
+                            <p>{tecnologias.Frontend}</p>
+                        </div>
+                        <div>
+                            <p class="font-medium">Backend:</p>
+                            <p>{tecnologias.backend}</p>
+                        </div>
+                        <div>
+                            <p class="font-medium">Base de datos:</p>
+                            <p>{tecnologias.base}</p>
+                        </div>
+                    </div>
+                </section>
+
+                <section>
+                    <h2 class="text-2xl text-[#51F9F1] mb-4">Logros Destacados</h2>
+                    <ul class="space-y-3 text-gray-300">
+                        {logros.map((logro) => (
+                        <li class="flex items-center"><span class="mr-2">✔️</span>{logro}</li>
+                        ))}
+                    </ul>
+                </section>
+
+            </div>
+))} -->
