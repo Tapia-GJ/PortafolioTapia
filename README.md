@@ -1,54 +1,65 @@
-# Astro Starter Kit: Basics
+# 🚀 Luis Tapia | Software Developer Portfolio
 
-```sh
-npm create astro@latest -- --template basics
-```
+<div align="center">
+  <img src="https://img.shields.io/badge/Astro-0C172D?style=for-the-badge&logo=astro&logoColor=white" alt="Astro" />
+  <img src="https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white" alt="Tailwind CSS" />
+  <img src="https://img.shields.io/badge/JavaScript-323330?style=for-the-badge&logo=javascript&logoColor=F7DF1E" alt="JavaScript" />
+  <img src="https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white" alt="HTML5" />
+</div>
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/withastro/astro/tree/latest/examples/basics)
-[![Open with CodeSandbox](https://assets.codesandbox.io/github/button-edit-lime.svg)](https://codesandbox.io/p/sandbox/github/withastro/astro/tree/latest/examples/basics)
-[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/withastro/astro?devcontainer_path=.devcontainer/basics/devcontainer.json)
+<br />
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+Bienvenido al repositorio de mi portafolio web personal. Este sitio fue diseñado y desarrollado desde cero para mostrar mi experiencia, mis proyectos más destacados y las tecnologías con las que trabajo diariamente como desarrollador de software.
 
-![just-the-basics](https://github.com/withastro/astro/assets/2244813/a0a5533c-a856-4198-8470-2d67b1d7c554)
+## ✨ Características del Portafolio
 
-## 🚀 Project Structure
+- **Diseño Moderno y Responsivo:** Construido con Tailwind CSS, garantizando una visualización perfecta en cualquier dispositivo.
+- **Rendimiento Extremo (Zero-JS):** Utilizando el poder de **Astro** y su *Islands Architecture* para enviar el mínimo JavaScript posible al cliente, logrando tiempos de carga ultrarrápidos.
+- **Sección de Proyectos:** Tarjetas interactivas (implementando el patrón de *Stretched Link* para mejor accesibilidad y UX) detallando mis trabajos fullstack y frontend.
 
-Inside of your Astro project, you'll see the following folders and files:
+## 🛠️ Stack Tecnológico
 
-```text
-/
-├── public/
-│   └── favicon.svg
-├── src/
-│   ├── components/
-│   │   └── Card.astro
-│   ├── layouts/
-│   │   └── Layout.astro
-│   └── pages/
-│       └── index.astro
-└── package.json
-```
+Este portafolio está construido puramente con tecnologías web modernas enfocadas en el rendimiento:
 
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
+- **Framework:** [Astro](https://astro.build/) - Para generación de sitios estáticos (SSG) y renderizado ultra rápido.
+- **Estilos:** [Tailwind CSS](https://tailwindcss.com/) - Para un diseño atómico, consistente y fácil de mantener.
+- **Despliegue:** Preparado para ser alojado de manera eficiente.
 
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
+## 💻 Proyectos Destacados (Mostrados en el Portafolio)
 
-Any static assets, like images, can be placed in the `public/` directory.
+1. **Sistema de Gestión Empresarial:** Fullstack (React, NestJS, MySQL). Control de herramientas, inventario y servicios.
+2. **Sistema Academia:** Fullstack (PHP, HTML, CSS, MySQL). Plataforma de gestión de calificaciones para alumnos y profesores.
+3. **App Web Registro de Lesiones:** Frontend/Backend (Python, Flask, MySQL). Gestión de informes clínicos y pacientes.
+4. **Ecommerce de Pines y Llaveros:** Fullstack (React, TypeScript, Tailwind, Supabase, Mercado Pago).
 
-## 🧞 Commands
+## 🚀 Instalación y Desarrollo Local
 
-All commands are run from the root of the project, from a terminal:
+Si querés clonar este repositorio para ver el código fuente o usarlo como inspiración, seguí estos pasos:
 
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
+1. Cloná el repositorio:
+   ```bash
+   git clone https://github.com/Tapia-GJ/portafolio.git
+   ```
+2. Instalá las dependencias:
+   ```bash
+   npm install
+   ```
+3. Levantá el servidor de desarrollo:
+   ```bash
+   npm run dev
+   ```
+4. Abrí tu navegador en `http://localhost:4321`
 
-## 👀 Want to learn more?
+## 📫 Contacto
 
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+¿Tenés alguna propuesta, proyecto en mente o simplemente querés charlar sobre código? ¡Conectemos!
+
+- **LinkedIn:** [Luis Tapia](https://www.linkedin.com/in/luis-tapia-aaa2691a3/)
+- **GitHub:** [@Tapia-GJ](https://github.com/Tapia-GJ)
+- **Email:** luivstapia285@gmail.com
+
+---
+
+<div align="center">
+  <i>Diseñado y codeado con pasión por Luis Tapia.</i>
+</div>
