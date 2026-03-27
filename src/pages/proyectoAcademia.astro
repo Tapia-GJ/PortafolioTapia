@@ -1,68 +1,91 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import LinkedinIcon from '../components/icons/linkedin.astro';
-import GithubIcon from '../components/icons/github.astro';
-import GmailIcon from '../components/icons/gmail.astro';
+import Layout from "../layouts/Layout.astro";
 ---
 
 <Layout title="Portafolio Luis Tapia">
-    <main>
-        <section class="w-full mx-auto lg:w-[740px] py-24 px-4">
-            <h1 class="text-4xl font-medium text-center text-[#51F9F1] mb-2">Sistema Academia</h1>
-            <div class="flex flex-wrap gap-2 mb-8 justify-center text-lg text-gray-300">
-                <span class="px-3 py-1 bg-[#2d2d2d] rounded-full text-sm">Fullstack</span>
-						<span class="px-3 py-1 bg-[#2d2d2d] rounded-full text-sm">PHP</span>
-						<span class="px-3 py-1 bg-[#2d2d2d] rounded-full text-sm">HTML</span>
-						<span class="px-3 py-1 bg-[#2d2d2d] rounded-full text-sm">CSS</span>
-						<span class="px-3 py-1 bg-[#2d2d2d] rounded-full text-sm">MySQL</span>
-            </div>
-            <img src="/static/Academia.png" alt="Taller Castillo" class="w-full rounded-lg mb-8">
+  <main>
+    <section class="w-full mx-auto lg:w-[740px] py-24 px-4">
+      <h1 class="text-4xl font-medium text-center text-[#51F9F1] mb-2">
+        Sistema Academia
+      </h1>
+      <div
+        class="flex flex-wrap gap-2 mb-8 justify-center text-lg text-gray-300"
+      >
+        <span class="px-3 py-1 bg-[#2d2d2d] rounded-full text-sm"
+          >Fullstack</span
+        >
+        <span class="px-3 py-1 bg-[#2d2d2d] rounded-full text-sm">PHP</span>
+        <span class="px-3 py-1 bg-[#2d2d2d] rounded-full text-sm">HTML</span>
+        <span class="px-3 py-1 bg-[#2d2d2d] rounded-full text-sm">CSS</span>
+        <span class="px-3 py-1 bg-[#2d2d2d] rounded-full text-sm">MySQL</span>
+      </div>
+      <img
+        src="/static/Academia.png"
+        alt="Taller Castillo"
+        class="w-full rounded-lg mb-8"
+      />
 
-            <div class="space-y-8">
-
-                <section>
-                    <h2 class="text-2xl text-[#51F9F1] mb-4">Descripción</h2>
-                    <p class="text-gray-300">
-                        Plataforma web donde los alumnos pueden consultar sus calificaciones y asignaturas, los profesores gestionar las notas de sus estudiantes y los administradores controlar la información de alumnos y profesores.
-                    </p>
-                </section>
-
-                <section>
-                    <h2 class="text-2xl text-[#51F9F1] mb-4">Módulos Principales</h2>
-                    <ul class="space-y-3 text-gray-300">
-                        <li class="flex items-center"><span class="mr-2">✅</span>Gestión de Estudiantes (datos, calificaciones, asignaturas)</li>
-                        <li class="flex items-center"><span class="mr-2">✅</span>Gestión de Profesores (datos, notas, asignaturas)</li>
-                    </ul>
-                </section>
-
-                <section>
-                    <h2 class="text-2xl text-[#51F9F1] mb-4">Tecnologías Clave</h2>
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-gray-300">
-                        <div>
-                            <p class="font-medium">Frontend:</p>
-                            <p>HTML Y CSS con diseño intuitivo</p>
-                        </div>
-                        <div>
-                            <p class="font-medium">Backend:</p>
-                            <p>PHP</p>
-                        </div>
-                        <div>
-                            <p class="font-medium">Base de datos:</p>
-                            <p>Relacional (MySQL)</p>
-                        </div>
-                    </div>
-                </section>
-
-                <section>
-                    <h2 class="text-2xl text-[#51F9F1] mb-4">Logros Destacados</h2>
-                    <ul class="space-y-3 text-gray-300">
-                        <li class="flex items-center"><span class="mr-2">✔️</span>Automatización del registro y consulta de calificaciones</li>
-                        <li class="flex items-center"><span class="mr-2">✔️</span>Optimización del flujo de trabajo para profesores y alumnos</li>
-                        <li class="flex items-center"><span class="mr-2">✔️</span>Interfaz intuitiva que mejora la experiencia del usuario</li>
-                    </ul>
-                </section>
-
-            </div>
+      <div class="space-y-8">
+        <section>
+          <h2 class="text-2xl text-[#51F9F1] mb-4">Descripción</h2>
+          <p class="text-gray-300">
+            Plataforma web donde los alumnos pueden consultar sus calificaciones
+            y asignaturas, los profesores gestionar las notas de sus estudiantes
+            y los administradores controlar la información de alumnos y
+            profesores.
+          </p>
         </section>
-    </main>
+
+        <section>
+          <h2 class="text-2xl text-[#51F9F1] mb-4">Módulos Principales</h2>
+          <ul class="space-y-3 text-gray-300">
+            <li class="flex items-center">
+              <span class="mr-2">✅</span>Gestión de Estudiantes (datos,
+              calificaciones, asignaturas)
+            </li>
+            <li class="flex items-center">
+              <span class="mr-2">✅</span>Gestión de Profesores (datos, notas,
+              asignaturas)
+            </li>
+          </ul>
+        </section>
+
+        <section>
+          <h2 class="text-2xl text-[#51F9F1] mb-4">Tecnologías Clave</h2>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-gray-300">
+            <div>
+              <p class="font-medium">Frontend:</p>
+              <p>HTML Y CSS con diseño intuitivo</p>
+            </div>
+            <div>
+              <p class="font-medium">Backend:</p>
+              <p>PHP</p>
+            </div>
+            <div>
+              <p class="font-medium">Base de datos:</p>
+              <p>Relacional (MySQL)</p>
+            </div>
+          </div>
+        </section>
+
+        <section>
+          <h2 class="text-2xl text-[#51F9F1] mb-4">Logros Destacados</h2>
+          <ul class="space-y-3 text-gray-300">
+            <li class="flex items-center">
+              <span class="mr-2">✔️</span>Automatización del registro y consulta
+              de calificaciones
+            </li>
+            <li class="flex items-center">
+              <span class="mr-2">✔️</span>Optimización del flujo de trabajo para
+              profesores y alumnos
+            </li>
+            <li class="flex items-center">
+              <span class="mr-2">✔️</span>Interfaz intuitiva que mejora la
+              experiencia del usuario
+            </li>
+          </ul>
+        </section>
+      </div>
+    </section>
+  </main>
 </Layout>
