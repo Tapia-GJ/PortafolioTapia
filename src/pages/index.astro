@@ -2,6 +2,63 @@
 import Layout from "@/layouts/Layout.astro";
 import LinkedinIcon from "@/components/icons/linkedin.astro";
 import GithubIcon from "@/components/icons/github.astro";
+import ProyectoCard from "@/components/projectsCards.astro";
+import type { Proyecto } from "@/types/project";
+
+const Proyectos: Proyecto[] = [
+  {
+    id: "1",
+    descripcion:
+      "Desarrollo de un sistema integral que incluye módulos para gestión de empresas clientes, control de herramientas, inventario, servicios y tareas pendientes.",
+    hasRepositorio: true,
+    img: "/static/TallerCastillo.jpeg",
+    nombreProyecto:
+      "Sistema de Gestión de Empresarial con control de Herramientas y Servicios",
+    stack: ["FullStack", "React", "NestJs", "MySQL"],
+    linkRepositorio: "https://github.com/Tapia-GJ/TallerCastillo",
+    linkDetalle: "proyectoTaller",
+  },
+  {
+    id: "2",
+    nombreProyecto: "Sistema Academia",
+    descripcion:
+      "Plataforma web donde los alumnos pueden consultar sus calificaciones y asignaturas, los profesores gestionar las notas de sus estudiantes y los administradores controlar la información de alumnos y profesores.",
+    img: "/static/Academia.png",
+    stack: ["Fullstack", "PHP", "HTML", "CSS", "MySQL"],
+    hasRepositorio: true,
+    linkRepositorio: "https://github.com/Tapia-GJ/SistemaAcademia",
+    linkDetalle: "proyectoAcademia",
+  },
+  {
+    id: "3",
+    nombreProyecto: "App Web Registro de Lesiones",
+    descripcion:
+      "Plataforma web donde los usuarios pueden registrar sus lesiones y consultar las que tienen asignadas.",
+    img: "/static/TerapiaFisica.png",
+    stack: ["Frontend", "Python", "Flask", "HTML", "CSS", "MySQL"],
+    linkDetalle: "/proyectoTerapia",
+  },
+  {
+    id: "4",
+    nombreProyecto: "Ecommerce de Pines y Llaveros",
+    descripcion:
+      "Aplicación web fullstack desarrollada para la venta de pines y llaveros personalizados.",
+    img: "/static/ecomercePines.png",
+    stack: [
+      "Fullstack",
+      "React",
+      "TypeScript",
+      "TailwindCSS",
+      "Mercado Pago",
+      "Supabase",
+    ],
+    hasRepositorio: true,
+    linkRepositorio: "https://github.com/Tapia-GJ/EcomerceFront-Backend",
+    hasLink: true,
+    linkSitioWeb: "https://chibiquiles.netlify.app/",
+    linkDetalle: "proyectoEcomerce",
+  },
+];
 ---
 
 <Layout title="Portafolio Luis Tapia">
@@ -76,270 +133,8 @@ import GithubIcon from "@/components/icons/github.astro";
     <section id="proyectos" class="w-full mx-auto lg:w-[740px] py-24 px-4">
       <h1 class="text-3xl font-light mb-8">Proyectos</h1>
       <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-        <!-- Proyecto 1 -->
-        <div
-          class="bg-[#1a1a1a] p-6 rounded-lg hover:border hover:border-[#51F9F1] transition-all relative group"
-        >
-          <h3 class="text-2xl font-light text-[#51F9F1] mb-2">
-            Sistema de Gestión de Empresarial con control de Herramientas y
-            Servicios
-          </h3>
-          <img
-            src="/static/TallerCastillo.jpeg"
-            alt="Taller Castillo"
-            class="w-full rounded-lg mb-4"
-          />
-          <p class="text-gray-300 mb-4">
-            Desarrollo de un sistema integral que incluye módulos para gestión
-            de empresas clientes, control de herramientas, inventario, servicios
-            y tareas pendientes.
-          </p>
-          <div class="flex flex-wrap gap-2 mb-4">
-            <span class="px-3 py-1 bg-[#2d2d2d] rounded-full text-sm"
-              >Fullstack</span
-            >
-            <span class="px-3 py-1 bg-[#2d2d2d] rounded-full text-sm"
-              >React</span
-            >
-            <span class="px-3 py-1 bg-[#2d2d2d] rounded-full text-sm"
-              >NestJS</span
-            >
-            <span class="px-3 py-1 bg-[#2d2d2d] rounded-full text-sm"
-              >MySQL</span
-            >
-          </div>
-
-          <div class="flex gap-4">
-            <a
-              href="proyectoTaller"
-              class="flex items-center text-[#51F9F1] hover:text-[#48bcb6] transition-colors before:absolute before:inset-0"
-            >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                class="w-5 h-5 mr-1"
-                fill="currentColor"
-                viewBox="0 0 20 20"
-              >
-                <path
-                  d="M10 3a2 2 0 110 4 2 2 0 010-4zm0 5a2 2 0 110 4 2 2 0 010-4zm0 5a2 2 0 110 4 2 2 0 010-4z"
-                ></path>
-              </svg>
-              Más
-            </a>
-            <a
-              href="https://github.com/Tapia-GJ/TallerCastillo"
-              class="flex items-center text-[#51F9F1] hover:text-[#48bcb6] transition-colors relative z-10"
-            >
-              <GithubIcon class="w-5 h-5 mr-1" />
-              Código
-            </a>
-          </div>
-        </div>
-
-        <!-- Proyecto 2 -->
-        <div
-          class="bg-[#1a1a1a] p-6 rounded-lg hover:border hover:border-[#51F9F1] transition-all relative group"
-        >
-          <h3 class="text-2xl font-light text-[#51F9F1] mb-2">
-            Sistema Academia
-          </h3>
-          <img
-            src="/static/Academia.png"
-            alt="Taller Castillo"
-            class="w-full rounded-lg mb-4"
-          />
-          <p class="text-gray-300 mb-4">
-            Plataforma web donde los alumnos pueden consultar sus calificaciones
-            y asignaturas, los profesores gestionar las notas de sus estudiantes
-            y los administradores controlar la información de alumnos y
-            profesores.
-          </p>
-
-          <div class="flex flex-wrap gap-2 mb-4">
-            <span class="px-3 py-1 bg-[#2d2d2d] rounded-full text-sm"
-              >Fullstack</span
-            >
-            <span class="px-3 py-1 bg-[#2d2d2d] rounded-full text-sm">PHP</span>
-            <span class="px-3 py-1 bg-[#2d2d2d] rounded-full text-sm">HTML</span
-            >
-            <span class="px-3 py-1 bg-[#2d2d2d] rounded-full text-sm">CSS</span>
-            <span class="px-3 py-1 bg-[#2d2d2d] rounded-full text-sm"
-              >MySQL</span
-            >
-          </div>
-
-          <div class="flex gap-4">
-            <a
-              href="proyectoAcademia"
-              class="flex items-center text-[#51F9F1] hover:text-[#48bcb6] transition-colors before:absolute before:inset-0"
-            >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                class="w-5 h-5 mr-1"
-                fill="currentColor"
-                viewBox="0 0 20 20"
-              >
-                <path
-                  d="M10 3a2 2 0 110 4 2 2 0 010-4zm0 5a2 2 0 110 4 2 2 0 010-4zm0 5a2 2 0 110 4 2 2 0 010-4z"
-                ></path>
-              </svg>
-              Más
-            </a>
-            <a
-              href="https://github.com/Tapia-GJ/SistemaAcademia"
-              class="flex items-center text-[#51F9F1] hover:text-[#48bcb6] transition-colors relative z-10"
-            >
-              <GithubIcon class="w-5 h-5 mr-1" />
-              Código
-            </a>
-          </div>
-        </div>
-        <!-- Proyecto 3 -->
-        <div
-          class="bg-[#1a1a1a] p-6 rounded-lg hover:border hover:border-[#51F9F1] transition-all relative group"
-        >
-          <h3 class="text-2xl font-light text-[#51F9F1] mb-2">
-            App Web Registro de Lesiones
-          </h3>
-          <img
-            src="/static/TerapiaFisica.png"
-            alt="Taller Castillo"
-            class="w-full rounded-lg mb-4"
-          />
-          <p class="text-gray-300 mb-4">
-            Plataforma web donde los usuarios pueden registrar sus lesiones y
-            consultar las que tienen asignadas.
-          </p>
-
-          <div class="flex flex-wrap gap-2 mb-4">
-            <span class="px-3 py-1 bg-[#2d2d2d] rounded-full text-sm"
-              >Frontend</span
-            >
-            <span class="px-3 py-1 bg-[#2d2d2d] rounded-full text-sm"
-              >Python</span
-            >
-            <span class="px-3 py-1 bg-[#2d2d2d] rounded-full text-sm"
-              >Flask</span
-            >
-            <span class="px-3 py-1 bg-[#2d2d2d] rounded-full text-sm">HTML</span
-            >
-            <span class="px-3 py-1 bg-[#2d2d2d] rounded-full text-sm">CSS</span>
-            <span class="px-3 py-1 bg-[#2d2d2d] rounded-full text-sm"
-              >MySQL</span
-            >
-          </div>
-
-          <div class="flex gap-4">
-            <a
-              href="/proyectoTerapia"
-              class="flex items-center text-[#51F9F1] hover:text-[#48bcb6] transition-colors before:absolute before:inset-0"
-            >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                class="w-5 h-5 mr-1"
-                fill="currentColor"
-                viewBox="0 0 20 20"
-              >
-                <path
-                  d="M10 3a2 2 0 110 4 2 2 0 010-4zm0 5a2 2 0 110 4 2 2 0 010-4zm0 5a2 2 0 110 4 2 2 0 010-4z"
-                ></path>
-              </svg>
-              Más
-            </a>
-          </div>
-        </div>
-        <!-- Proyecto 4 -->
-        <div
-          class="bg-[#1a1a1a] p-6 rounded-lg hover:border hover:border-[#51F9F1] transition-all relative group"
-        >
-          <h3 class="text-2xl font-light text-[#51F9F1] mb-2">
-            Ecommerce de Pines y Llaveros
-          </h3>
-          <img
-            src="/static/ecomercePines.png"
-            alt="Ecomerce Pines y Llaveros"
-            class="w-full rounded-lg mb-4"
-          />
-          <p class="text-gray-300 mb-4">
-            Aplicación web fullstack desarrollada para la venta de pines y
-            llaveros personalizados.
-          </p>
-
-          <div class="flex flex-wrap gap-2 mb-4">
-            <span class="px-3 py-1 bg-[#2d2d2d] rounded-full text-sm"
-              >Fullstack</span
-            >
-            <span class="px-3 py-1 bg-[#2d2d2d] rounded-full text-sm"
-              >React</span
-            >
-            <span class="px-3 py-1 bg-[#2d2d2d] rounded-full text-sm"
-              >TypeScript</span
-            >
-            <span class="px-3 py-1 bg-[#2d2d2d] rounded-full text-sm"
-              >TailwindCSS</span
-            >
-            <span class="px-3 py-1 bg-[#2d2d2d] rounded-full text-sm"
-              >Mercado Pago</span
-            >
-            <span class="px-3 py-1 bg-[#2d2d2d] rounded-full text-sm"
-              >Supabase</span
-            >
-          </div>
-
-          <div class="flex gap-4">
-            <a
-              href="proyectoEcomerce"
-              class="flex items-center text-[#51F9F1] hover:text-[#48bcb6] transition-colors before:absolute before:inset-0"
-            >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                class="w-5 h-5 mr-1"
-                fill="currentColor"
-                viewBox="0 0 20 20"
-              >
-                <path
-                  d="M10 3a2 2 0 110 4 2 2 0 010-4zm0 5a2 2 0 110 4 2 2 0 010-4zm0 5a2 2 0 110 4 2 2 0 010-4z"
-                ></path>
-              </svg>
-              Más
-            </a>
-
-            <a
-              href="https://github.com/Tapia-GJ/EcomerceFront-Backend"
-              class="flex items-center text-[#51F9F1] hover:text-[#48bcb6] transition-colors relative z-10"
-            >
-              <GithubIcon class="w-5 h-5 mr-1" />
-              Código
-            </a>
-            <a
-              href="https://chibiquiles.netlify.app/"
-              class="flex items-center text-[#51F9F1] hover:text-[#48bcb6] transition-colors relative z-10"
-            >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                class="w-5 h-5 mr-1"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
-                ></path>
-              </svg>
-              Ir al sitio
-            </a>
-          </div>
-        </div>
+        {Proyectos.map((proye: Proyecto) => <ProyectoCard proyecto={proye} />)}
       </div>
     </section>
-    <!-- <section class="w-full mx-auto lg:w-[740px]">
-			<h1 class="text-3xl font-light flex flex-row">Habilidades</h1>
-		</section>
-		<section class="w-full mx-auto lg:w-[740px]">
-			<h1 class="text-3xl font-light flex flex-row">Sobre Mí</h1>
-		</section> -->
   </main>
 </Layout>
