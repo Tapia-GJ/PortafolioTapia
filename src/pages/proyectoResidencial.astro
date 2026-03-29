@@ -1,0 +1,146 @@
+---
+import Layout from "@/layouts/Layout.astro";
+---
+
+<Layout title="Portafolio Luis Tapia">
+  <main>
+    <section class="w-full mx-auto lg:w-[740px] py-24 px-4">
+      <h1 class="text-4xl font-medium text-center text-[#51F9F1] mb-2">
+        Plataforma Residencial SCA
+      </h1>
+      <div
+        class="flex flex-wrap gap-2 mb-8 justify-center text-lg text-gray-300"
+      >
+        <span class="px-3 py-1 bg-[#2d2d2d] rounded-full text-sm">Frontend</span
+        >
+        <span class="px-3 py-1 bg-[#2d2d2d] rounded-full text-sm">Angular</span>
+        <span class="px-3 py-1 bg-[#2d2d2d] rounded-full text-sm"
+          >TypeScript</span
+        >
+        <span class="px-3 py-1 bg-[#2d2d2d] rounded-full text-sm"
+          >TailwindCSS</span
+        >
+        <span class="px-3 py-1 bg-[#2d2d2d] rounded-full text-sm">Figma</span>
+      </div>
+
+      <img
+        src="/static/sca/sca_main.png"
+        alt="Plataforma Residencial SCA"
+        class="w-full rounded-lg mb-6"
+      />
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 pb-6">
+        <img
+          src="/static/sca/sca_1.png"
+          alt="Plataforma Residencial SCA - Control de accesos"
+          class="w-full lg:h-[180px] rounded-lg"
+        />
+        <img
+          src="/static/sca/sca_2.png"
+          alt="Plataforma Residencial SCA - Cuentas por cobrar"
+          class="w-full lg:h-[180px] rounded-lg"
+        />
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 pb-6">
+        <img
+          src="/static/sca/sca_3.png"
+          alt="Plataforma Residencial SCA - Gestión de obras"
+          class="w-full lg:h-[180px] rounded-lg"
+        />
+        <img
+          src="/static/sca/sca_4.png"
+          alt="Plataforma Residencial SCA - Interfaz móvil"
+          class="w-full lg:h-[180px] rounded-lg"
+        />
+      </div>
+      <div class="grid grid-cols-1 pb-6">
+        <img
+          src="/static/sca/sca_reporteEntradasSalidas.png"
+          alt="Plataforma Residencial SCA - Reporte de entradas y salidas"
+          class="w-full rounded-lg h-[]"
+        />
+      </div>
+
+      <div class="space-y-8">
+        <section>
+          <h2 class="text-2xl text-[#51F9F1] mb-4">Descripción</h2>
+          <p class="text-gray-300">
+            Sistema integral para la administración de complejos residenciales
+            desarrollado durante mis prácticas profesionales. Lideré el rediseño
+            de la aplicación movil y construí módulos web clave para el control
+            de accesos, cuentas por cobrar, gestión de obras y
+            refactactorizacion del modulo de usuarios (residentes, personal,
+            guardias y administrativos). El código aplica buenas prácticas de
+            arquitectura frontend, garantizando una navegación intuitiva,
+            consistencia visual y un alto rendimiento técnico.
+          </p>
+        </section>
+
+        <section>
+          <h2 class="text-2xl text-[#51F9F1] mb-4">Módulos Principales</h2>
+          <ul class="space-y-3 text-gray-300">
+            <li class="flex items-center">
+              <span class="mr-2">✅</span>Control de accesos para visitantes y
+              residentes
+            </li>
+            <li class="flex items-center">
+              <span class="mr-2">✅</span>Cuentas por cobrar con gestión de
+              pagos y estados de cuenta
+            </li>
+            <li class="flex items-center">
+              <span class="mr-2">✅</span>Gestión de obras y mantenimiento del
+              complejo residencial
+            </li>
+            <li class="flex items-center">
+              <span class="mr-2">✅</span>Rediseño completo de la aplicación
+              móvil centrado en UX
+            </li>
+            <li class="flex items-center">
+              <span class="mr-2">✅</span>Reportes de entradas y salidas del
+              complejo
+            </li>
+          </ul>
+        </section>
+
+        <section>
+          <h2 class="text-2xl text-[#51F9F1] mb-4">Tecnologías Clave</h2>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-gray-300">
+            <div>
+              <p class="font-medium">Frontend:</p>
+              <p>Angular + TypeScript + TailwindCSS</p>
+            </div>
+            <div>
+              <p class="font-medium">Diseño UI/UX:</p>
+              <p>Figma (prototipos y sistema de diseño)</p>
+            </div>
+            <div>
+              <p class="font-medium">Arquitectura:</p>
+              <p>Componentes modulares con buenas prácticas</p>
+            </div>
+          </div>
+        </section>
+
+        <section>
+          <h2 class="text-2xl text-[#51F9F1] mb-4">Logros Destacados</h2>
+          <ul class="space-y-3 text-gray-300">
+            <li class="flex items-center">
+              <span class="mr-2">✔️</span>Liderazgo en el rediseño de la
+              interfaz móvil con enfoque centrado en el usuario
+            </li>
+            <li class="flex items-center">
+              <span class="mr-2">✔️</span>Desarrollo de módulos web críticos
+              para la operación del complejo residencial
+            </li>
+            <li class="flex items-center">
+              <span class="mr-2">✔️</span>Implementación de arquitectura
+              frontend escalable y mantenible
+            </li>
+            <li class="flex items-center">
+              <span class="mr-2">✔️</span>Consistencia visual y navegación
+              intuitiva en toda la plataforma
+            </li>
+          </ul>
+        </section>
+      </div>
+    </section>
+  </main>
+</Layout>
