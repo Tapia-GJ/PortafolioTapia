@@ -159,13 +159,13 @@ const Proyectos: Proyecto[] = [
         </button>
         <button
           data-filter="profesional"
-          class="filter-btn px-4 py-2 rounded-full text-sm font-medium transition-all bg-[#2d2d2d] text-gray-300 hover:bg-[#3d3d3d]"
+          class="filter-btn px-4 py-2 rounded-full text-sm font-medium transition-all bg-[#2d2d2d] text-gray-300 hover:bg-[#51F9F1] hover:text-black"
         >
           Experiencia Profesional
         </button>
         <button
           data-filter="personal"
-          class="filter-btn px-4 py-2 rounded-full text-sm font-medium transition-all bg-[#2d2d2d] text-gray-300 hover:bg-[#3d3d3d]"
+          class="filter-btn px-4 py-2 rounded-full text-sm font-medium transition-all bg-[#2d2d2d] text-gray-300 hover:bg-[#51F9F1] hover:text-black"
         >
           Proyectos Personales
         </button>
@@ -185,8 +185,9 @@ const Proyectos: Proyecto[] = [
 <script>
   document.addEventListener("DOMContentLoaded", () => {
     const botones = document.querySelectorAll<HTMLButtonElement>(".filter-btn");
-    const cards =
-      document.querySelectorAll<HTMLElement>("#grid-proyectos > div");
+    const cards = document.querySelectorAll<HTMLElement>(
+      "#grid-proyectos > div",
+    );
 
     botones.forEach((btn) => {
       btn.addEventListener("click", () => {
