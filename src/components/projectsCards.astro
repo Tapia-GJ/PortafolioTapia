@@ -6,15 +6,34 @@ interface Props {
   [key: string]: any;
 }
 const { proyecto, ...otherProps } = Astro.props;
+
+const badgeConfig = {
+  personal: { label: "Personal", class: "bg-blue-500/20 text-blue-400" },
+  profesional: {
+    label: "Experiencia Profesional",
+    class: "bg-emerald-500/20 text-emerald-400",
+  },
+};
+const badge = badgeConfig[proyecto.categoria];
 ---
 
 <div
   class="bg-[#1a1a1a] p-6 rounded-lg hover:border hover:border-[#51F9F1] transition-all relative group"
   {...otherProps}
 >
-  <h3 class="text-xl font-light text-[#51F9F1] mb-2">
-    {proyecto.nombreProyecto}
-  </h3>
+  <div class="flex flex-col mb-2 gap-1">
+    <h3 class="text-xl font-light text-[#51F9F1]">
+      {proyecto.nombreProyecto}
+    </h3>
+    <span
+      class:list={[
+        "w-fit px-2 py-0.5 rounded-full text-xs font-medium whitespace-nowrap",
+        badge.class,
+      ]}
+    >
+      {badge.label}
+    </span>
+  </div>
   <img
     src={proyecto.img}
     alt={proyecto.nombreProyecto}

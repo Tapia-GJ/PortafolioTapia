@@ -15,6 +15,7 @@ const Proyectos: Proyecto[] = [
     nombreProyecto:
       "Sistema de Gestión de Empresarial con control de Herramientas y Servicios",
     stack: ["FullStack", "React", "NestJs", "MySQL"],
+    categoria: "personal",
     linkRepositorio: "https://github.com/Tapia-GJ/TallerCastillo",
     linkDetalle: "proyectoTaller",
   },
@@ -25,6 +26,7 @@ const Proyectos: Proyecto[] = [
       "Plataforma web donde los alumnos pueden consultar sus calificaciones y asignaturas, los profesores gestionar las notas de sus estudiantes y los administradores controlar la información de alumnos y profesores.",
     img: "/static/Academia.png",
     stack: ["Fullstack", "PHP", "HTML", "CSS", "MySQL"],
+    categoria: "personal",
     hasRepositorio: true,
     linkRepositorio: "https://github.com/Tapia-GJ/SistemaAcademia",
     linkDetalle: "proyectoAcademia",
@@ -36,6 +38,7 @@ const Proyectos: Proyecto[] = [
       "Plataforma web donde los usuarios pueden registrar sus lesiones y consultar las que tienen asignadas.",
     img: "/static/TerapiaFisica.png",
     stack: ["Frontend", "Python", "Flask", "HTML", "CSS", "MySQL"],
+    categoria: "personal",
     linkDetalle: "/proyectoTerapia",
   },
   {
@@ -52,6 +55,7 @@ const Proyectos: Proyecto[] = [
       "Mercado Pago",
       "Supabase",
     ],
+    categoria: "personal",
     hasRepositorio: true,
     linkRepositorio: "https://github.com/Tapia-GJ/EcomerceFront-Backend",
     hasLink: true,
@@ -65,6 +69,7 @@ const Proyectos: Proyecto[] = [
       "Sistema integral para la administración de complejos residenciales. Rediseño de interfaz móvil y desarrollo de módulos web para control de accesos, cuentas por cobrar y gestión de obras.",
     img: "/static/sca/sca_main.png",
     stack: ["Frontend", "Angular", "TypeScript", "TailwindCSS", "Figma"],
+    categoria: "profesional",
     hasLink: true,
     linkSitioWeb: "https://scaresidencial.com/app/login",
     linkDetalle: "proyectoResidencial",
@@ -143,9 +148,67 @@ const Proyectos: Proyecto[] = [
     <!-- Proyectos -->
     <section id="proyectos" class="w-full mx-auto lg:w-[740px] py-24 px-4">
       <h1 class="text-3xl font-light mb-8">Proyectos</h1>
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-        {Proyectos.map((proye: Proyecto) => <ProyectoCard proyecto={proye} />)}
+
+      <!-- Filtros -->
+      <div class="flex gap-3 mb-8" id="filtros-proyectos">
+        <button
+          data-filter="todos"
+          class="filter-btn px-4 py-2 rounded-full text-sm font-medium transition-all bg-[#51F9F1] text-black"
+        >
+          Todos
+        </button>
+        <button
+          data-filter="profesional"
+          class="filter-btn px-4 py-2 rounded-full text-sm font-medium transition-all bg-[#2d2d2d] text-gray-300 hover:bg-[#3d3d3d]"
+        >
+          Experiencia Profesional
+        </button>
+        <button
+          data-filter="personal"
+          class="filter-btn px-4 py-2 rounded-full text-sm font-medium transition-all bg-[#2d2d2d] text-gray-300 hover:bg-[#3d3d3d]"
+        >
+          Proyectos Personales
+        </button>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6" id="grid-proyectos">
+        {
+          Proyectos.map((proye: Proyecto) => (
+            <ProyectoCard proyecto={proye} data-categoria={proye.categoria} />
+          ))
+        }
       </div>
     </section>
   </main>
 </Layout>
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const botones = document.querySelectorAll<HTMLButtonElement>(".filter-btn");
+    const cards =
+      document.querySelectorAll<HTMLElement>("#grid-proyectos > div");
+
+    botones.forEach((btn) => {
+      btn.addEventListener("click", () => {
+        const filtro = btn.dataset.filter;
+
+        // Actualizar estilos de botones
+        botones.forEach((b) => {
+          b.classList.remove("bg-[#51F9F1]", "text-black");
+          b.classList.add("bg-[#2d2d2d]", "text-gray-300");
+        });
+        btn.classList.remove("bg-[#2d2d2d]", "text-gray-300");
+        btn.classList.add("bg-[#51F9F1]", "text-black");
+
+        // Filtrar cards
+        cards.forEach((card) => {
+          if (filtro === "todos" || card.dataset.categoria === filtro) {
+            card.style.display = "";
+          } else {
+            card.style.display = "none";
+          }
+        });
+      });
+    });
+  });
+</script>
