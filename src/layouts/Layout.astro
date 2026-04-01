@@ -15,25 +15,62 @@ const { title } = Astro.props;
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Mono:ital,wght@0,300;0,400;0,500;1,300&display=swap"
+      rel="stylesheet"
+    />
   </head>
   <body>
-    <!-- <div class="absolute bottom-0 left-[-20%] right-0 top-[-10%] h-[500px] w-[500px] rounded-full bg-[radial-gradient(circle_farthest-side,rgba(255,0,182,.15),rgba(255,255,255,0))]"></div><div class="absolute bottom-0 right-[-20%] top-[-10%] h-[500px] w-[500px] rounded-full bg-[radial-gradient(circle_farthest-side,rgba(255,0,182,.15),rgba(255,255,255,0))]"></div></div> -->
     <Header />
     <slot />
   </body>
 </html>
 <style is:global>
   :root {
-    color-scheme: light dark;
+    --accent: #51F9F1;
+    --accent-dim: #48bcb6;
+    --accent-glow: rgba(81, 249, 241, 0.12);
+    --accent-glow-strong: rgba(81, 249, 241, 0.22);
+    --bg-body: #0e0f13;
+    --bg-card: #13151b;
+    --bg-card-hover: #181a22;
+    --bg-tag: #1e2029;
+    --text-primary: #f0f0f0;
+    --text-secondary: #8a8fa8;
+    --border-subtle: rgba(255, 255, 255, 0.06);
+    --border-accent: rgba(81, 249, 241, 0.35);
+    --font-display: 'Syne', sans-serif;
+    --font-mono: 'DM Mono', monospace;
   }
+
+  *, *::before, *::after {
+    box-sizing: border-box;
+  }
+
   html {
-    font-family: sans-serif;
+    font-family: var(--font-display);
+    scroll-behavior: smooth;
   }
+
   body {
-    background: #13151a;
+    background: var(--bg-body);
     display: flex;
     flex-direction: column;
-    height: 100vh;
-    color: #ffffff;
+    min-height: 100vh;
+    color: var(--text-primary);
+    position: relative;
+    overflow-x: hidden;
+  }
+
+  /* Scrollbar */
+  ::-webkit-scrollbar { width: 4px; }
+  ::-webkit-scrollbar-track { background: var(--bg-body); }
+  ::-webkit-scrollbar-thumb { background: var(--border-accent); border-radius: 2px; }
+
+  ::selection {
+    background: var(--accent);
+    color: #0e0f13;
   }
 </style>
