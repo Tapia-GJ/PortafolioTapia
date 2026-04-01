@@ -74,6 +74,7 @@ const badge = badgeConfig[proyecto.categoria];
       proyecto.hasRepositorio && (
         <a
           href={proyecto.linkRepositorio}
+          target="_blank"
           class="flex items-center text-[#51F9F1] hover:text-[#48bcb6] transition-colors relative z-10"
         >
           <GithubIcon class="w-5 h-5 mr-1" />
@@ -85,6 +86,7 @@ const badge = badgeConfig[proyecto.categoria];
       proyecto.hasLink && (
         <a
           href={proyecto.linkSitioWeb}
+          target="_blank"
           class="flex items-center text-[#51F9F1] hover:text-[#48bcb6] transition-colors relative z-10"
         >
           <svg
