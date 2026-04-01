@@ -1,0 +1,181 @@
+---
+// Componente global de lightbox.
+// Se monta en Layout.astro — funciona en todas las páginas automáticamente.
+// Las imágenes que quieran activarlo solo necesitan la clase "lightbox-img".
+---
+
+<!-- Overlay del lightbox -->
+<div id="lightbox" aria-modal="true" aria-label="Imagen ampliada" role="dialog">
+  <div id="lightbox-backdrop"></div>
+  <div id="lightbox-container">
+    <button id="lightbox-close" aria-label="Cerrar imagen">
+      <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+        <path
+          d="M3 3l14 14M17 3L3 17"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"></path>
+      </svg>
+    </button>
+    <img id="lightbox-img" src="" alt="" />
+  </div>
+</div>
+
+<style is:global>
+  /* ── Imágenes con lightbox ─────────────────────── */
+  .lightbox-img {
+    cursor: zoom-in;
+    transition:
+      transform 0.3s cubic-bezier(0.22, 1, 0.36, 1),
+      box-shadow 0.3s ease;
+  }
+
+  .lightbox-img:hover {
+    transform: scale(1.025);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
+    position: relative;
+    z-index: 1;
+  }
+
+  /* ── Lightbox overlay ─────────────────────────── */
+  #lightbox {
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1.5rem;
+
+    /* Estado cerrado */
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.25s ease;
+  }
+
+  #lightbox.is-open {
+    opacity: 1;
+    pointer-events: all;
+  }
+
+  /* Fondo oscuro */
+  #lightbox-backdrop {
+    position: absolute;
+    inset: 0;
+    background: rgba(8, 9, 12, 0.92);
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+    cursor: zoom-out;
+  }
+
+  /* Contenedor imagen */
+  #lightbox-container {
+    position: relative;
+    z-index: 1;
+    max-width: min(90vw, 1100px);
+    max-height: 90vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    transform: scale(0.92);
+    transition: transform 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+
+  #lightbox.is-open #lightbox-container {
+    transform: scale(1);
+  }
+
+  /* Imagen dentro del lightbox */
+  #lightbox-img {
+    max-width: 100%;
+    max-height: 80vh;
+    object-fit: contain;
+    border-radius: 8px;
+    box-shadow: 0 24px 80px rgba(0, 0, 0, 0.7);
+    display: block;
+    /* reset del hover de lightbox-img */
+    transform: none !important;
+    cursor: default;
+  }
+
+  /* Botón cerrar */
+  #lightbox-close {
+    position: absolute;
+    top: -2.75rem;
+    right: 0;
+    width: 2.25rem;
+    height: 2.25rem;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition:
+      background 0.2s,
+      border-color 0.2s,
+      transform 0.2s;
+  }
+
+  #lightbox-close:hover {
+    background: rgba(81, 249, 241, 0.15);
+    border-color: rgba(81, 249, 241, 0.4);
+    color: #51f9f1;
+    transform: rotate(90deg);
+  }
+
+  /* Evitar scroll del body mientras está abierto */
+  body.lightbox-open {
+    overflow: hidden;
+  }
+</style>
+
+<script>
+  const lightbox = document.getElementById("lightbox")!;
+  const backdrop = document.getElementById("lightbox-backdrop")!;
+  const closeBtn = document.getElementById("lightbox-close")!;
+  const lightboxImg = document.getElementById(
+    "lightbox-img",
+  ) as HTMLImageElement;
+
+  function openLightbox(src: string, alt: string) {
+    lightboxImg.src = src;
+    lightboxImg.alt = alt;
+    lightbox.classList.add("is-open");
+    document.body.classList.add("lightbox-open");
+  }
+
+  function closeLightbox() {
+    lightbox.classList.remove("is-open");
+    document.body.classList.remove("lightbox-open");
+    // Limpiar src después de la transición para evitar flash
+    setTimeout(() => {
+      lightboxImg.src = "";
+    }, 300);
+  }
+
+  // Click en cualquier imagen con clase lightbox-img
+  document.addEventListener("click", (e) => {
+    const target = e.target as HTMLElement;
+    if (target.classList.contains("lightbox-img")) {
+      const img = target as HTMLImageElement;
+      openLightbox(img.src, img.alt);
+    }
+  });
+
+  // Cerrar con el backdrop
+  backdrop.addEventListener("click", closeLightbox);
+
+  // Cerrar con el botón X
+  closeBtn.addEventListener("click", closeLightbox);
+
+  // Cerrar con Escape
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape" && lightbox.classList.contains("is-open")) {
+      closeLightbox();
+    }
+  });
+</script>
