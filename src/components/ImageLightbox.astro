@@ -8,7 +8,7 @@
 <div id="lightbox" aria-modal="true" aria-label="Imagen ampliada" role="dialog">
   <div id="lightbox-backdrop"></div>
   <div id="lightbox-container">
-    <button id="lightbox-close" aria-label="Cerrar imagen">
+    <button id="lightbox-close" class="absolute -top-11 right-0 w-9 h-9 rounded-full bg-white/10 border border-white/15 text-white flex items-center justify-center cursor-pointer transition-all duration-200 hover:bg-[#51f9f1]/15 hover:border-[#51f9f1]/40 hover:text-[#51f9f1] hover:rotate-90" aria-label="Cerrar imagen">
       <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
         <path
           d="M3 3l14 14M17 3L3 17"
@@ -17,7 +17,27 @@
           stroke-linecap="round"></path>
       </svg>
     </button>
+    <button id="lightbox-prev" class="hidden md:flex absolute top-1/2 -translate-y-1/2 -left-12 lg:-left-16 w-11 h-11 rounded-full bg-white/10 border border-white/15 text-white items-center justify-center cursor-pointer transition-all duration-200 hover:bg-[#51f9f1]/15 hover:border-[#51f9f1]/40 hover:text-[#51f9f1] hover:scale-110" aria-label="Imagen anterior">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+        <path
+          d="M15 18l-6-6 6-6"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"></path>
+      </svg>
+    </button>
     <img id="lightbox-img" src="" alt="" />
+    <button id="lightbox-next" class="hidden md:flex absolute top-1/2 -translate-y-1/2 -right-12 lg:-right-16 w-11 h-11 rounded-full bg-white/10 border border-white/15 text-white items-center justify-center cursor-pointer transition-all duration-200 hover:bg-[#51f9f1]/15 hover:border-[#51f9f1]/40 hover:text-[#51f9f1] hover:scale-110" aria-label="Siguiente imagen">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+        <path
+          d="M9 18l6-6-6-6"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"></path>
+      </svg>
+    </button>
   </div>
 </div>
 
@@ -72,8 +92,8 @@
   #lightbox-container {
     position: relative;
     z-index: 1;
-    max-width: min(90vw, 1100px);
-    max-height: 90vh;
+    max-width: min(85vw, 1000px); /* Ajustado para dejar espacio a los botones */
+    max-height: 85vh;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -99,34 +119,6 @@
     cursor: default;
   }
 
-  /* Botón cerrar */
-  #lightbox-close {
-    position: absolute;
-    top: -2.75rem;
-    right: 0;
-    width: 2.25rem;
-    height: 2.25rem;
-    border-radius: 50%;
-    background: rgba(255, 255, 255, 0.08);
-    border: 1px solid rgba(255, 255, 255, 0.15);
-    color: #fff;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-    transition:
-      background 0.2s,
-      border-color 0.2s,
-      transform 0.2s;
-  }
-
-  #lightbox-close:hover {
-    background: rgba(81, 249, 241, 0.15);
-    border-color: rgba(81, 249, 241, 0.4);
-    color: #51f9f1;
-    transform: rotate(90deg);
-  }
-
   /* Evitar scroll del body mientras está abierto */
   body.lightbox-open {
     overflow: hidden;
@@ -137,9 +129,19 @@
   const lightbox = document.getElementById("lightbox")!;
   const backdrop = document.getElementById("lightbox-backdrop")!;
   const closeBtn = document.getElementById("lightbox-close")!;
+  const prevBtn = document.getElementById("lightbox-prev")!;
+  const nextBtn = document.getElementById("lightbox-next")!;
   const lightboxImg = document.getElementById(
     "lightbox-img",
   ) as HTMLImageElement;
+
+  // Estado de la galería
+  let imageArray: HTMLImageElement[] = [];
+  let currentIndex: number = 0;
+
+  // Variables para touch/swipe
+  let touchStartX: number = 0;
+  let touchEndX: number = 0;
 
   function openLightbox(src: string, alt: string) {
     lightboxImg.src = src;
@@ -157,11 +159,31 @@
     }, 300);
   }
 
+  function nextImage() {
+    currentIndex = (currentIndex + 1) % imageArray.length;
+    const img = imageArray[currentIndex];
+    lightboxImg.src = img.src;
+    lightboxImg.alt = img.alt;
+  }
+
+  function prevImage() {
+    currentIndex = (currentIndex - 1 + imageArray.length) % imageArray.length;
+    const img = imageArray[currentIndex];
+    lightboxImg.src = img.src;
+    lightboxImg.alt = img.alt;
+  }
+
   // Click en cualquier imagen con clase lightbox-img
   document.addEventListener("click", (e) => {
     const target = e.target as HTMLElement;
     if (target.classList.contains("lightbox-img")) {
       const img = target as HTMLImageElement;
+      // Construir array de imágenes con clase lightbox-img
+      imageArray = Array.from(
+        document.querySelectorAll(".lightbox-img"),
+      ) as HTMLImageElement[];
+      // Encontrar el índice de la imagen clickeada
+      currentIndex = imageArray.indexOf(img);
       openLightbox(img.src, img.alt);
     }
   });
@@ -172,10 +194,42 @@
   // Cerrar con el botón X
   closeBtn.addEventListener("click", closeLightbox);
 
-  // Cerrar con Escape
+  // Navegación con botones
+  prevBtn.addEventListener("click", prevImage);
+  nextBtn.addEventListener("click", nextImage);
+
+  // Cerrar con Escape y navegación con flechas
   document.addEventListener("keydown", (e) => {
-    if (e.key === "Escape" && lightbox.classList.contains("is-open")) {
+    if (!lightbox.classList.contains("is-open")) return;
+
+    if (e.key === "Escape") {
       closeLightbox();
+    } else if (e.key === "ArrowLeft") {
+      prevImage();
+    } else if (e.key === "ArrowRight") {
+      nextImage();
+    }
+  });
+
+  // Soporte de swipe en dispositivos táctiles
+  lightbox.addEventListener("touchstart", (e) => {
+    if (!lightbox.classList.contains("is-open")) return;
+    touchStartX = e.changedTouches[0].screenX;
+  });
+
+  lightbox.addEventListener("touchend", (e) => {
+    if (!lightbox.classList.contains("is-open")) return;
+    touchEndX = e.changedTouches[0].screenX;
+
+    const swipeDelta = touchEndX - touchStartX;
+
+    // Swipe a la derecha (más de 50px) → imagen anterior
+    if (swipeDelta > 50) {
+      prevImage();
+    }
+    // Swipe a la izquierda (más de 50px) → siguiente imagen
+    else if (touchStartX - touchEndX > 50) {
+      nextImage();
     }
   });
 </script>
