@@ -1,5 +1,6 @@
 ---
 import Layout from "@/layouts/Layout.astro";
+import Badge from "@/components/Badge.astro";
 ---
 
 <Layout title="Portafolio Luis Tapia">
@@ -11,13 +12,12 @@ import Layout from "@/layouts/Layout.astro";
       <div
         class="flex flex-wrap gap-2 mb-8 justify-center text-lg text-gray-300"
       >
-        <span class="px-3 py-1 bg-[#2d2d2d] rounded-full text-sm">Frontend</span
-        >
-        <span class="px-3 py-1 bg-[#2d2d2d] rounded-full text-sm">Python</span>
-        <span class="px-3 py-1 bg-[#2d2d2d] rounded-full text-sm">Flask</span>
-        <span class="px-3 py-1 bg-[#2d2d2d] rounded-full text-sm">HTML</span>
-        <span class="px-3 py-1 bg-[#2d2d2d] rounded-full text-sm">CSS</span>
-        <span class="px-3 py-1 bg-[#2d2d2d] rounded-full text-sm">MySQL</span>
+        <Badge tecnologia="Frontend" />
+        <Badge tecnologia="Python" />
+        <Badge tecnologia="Flask" />
+        <Badge tecnologia="HTML" />
+        <Badge tecnologia="CSS" />
+        <Badge tecnologia="MySQL" />
       </div>
       <img
         src="/static/TerapiaFisica.png"

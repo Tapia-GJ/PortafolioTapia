@@ -1,6 +1,7 @@
 ---
 import GithubIcon from "@/components/icons/github.astro";
 import type { Proyecto } from "@/types/project";
+import Badge from "@/components/Badge.astro";
 interface Props {
   proyecto: Proyecto;
   [key: string]: any;
@@ -8,104 +9,126 @@ interface Props {
 const { proyecto, ...otherProps } = Astro.props;
 
 const badgeConfig = {
-  personal: { label: "Personal", class: "bg-blue-500/20 text-blue-400" },
+  personal: {
+    label: "Personal",
+    class:
+      "border-[var(--border-subtle)] text-[var(--text-secondary)] bg-transparent",
+  },
   profesional: {
     label: "Experiencia Profesional",
-    class: "bg-emerald-500/20 text-emerald-400",
+    class:
+      "border-[var(--border-accent)] text-[var(--accent)] bg-[var(--accent-glow)]",
   },
 };
 const badge = badgeConfig[proyecto.categoria];
 ---
 
 <div
-  class="bg-[#1a1a1a] p-6 rounded-lg hover:border hover:border-[#51F9F1] transition-all relative group"
+  class="bg-[var(--bg-card)] p-6 rounded-2xl border border-[var(--border-subtle)] hover:border-[var(--border-accent)] hover:shadow-[0_0_20px_var(--accent-glow)] transition-all duration-500 relative group flex flex-col h-full"
   {...otherProps}
 >
-  <div class="flex flex-col mb-2 gap-1">
-    <h3 class="text-xl font-light text-[#51F9F1]">
-      {proyecto.nombreProyecto}
-    </h3>
+  <div class="flex flex-col mb-4 gap-2">
     <span
       class:list={[
-        "w-fit px-2 py-0.5 rounded-full text-xs font-medium whitespace-nowrap",
+        "w-fit px-3 py-1 rounded-full text-[10px] font-mono font-bold uppercase tracking-wider border",
         badge.class,
       ]}
     >
       {badge.label}
     </span>
-  </div>
-  <img
-    src={proyecto.img}
-    alt={proyecto.nombreProyecto}
-    class="w-full rounded-lg mb-4"
-    loading="lazy"
-  />
-  <p class="text-gray-300 mb-4">
-    {proyecto.descripcion}
-  </p>
-  <div class="flex flex-wrap gap-2 mb-4">
-    {
-      proyecto.stack.map((tecnologia) => (
-        <span class="px-3 py-1 bg-[#2d2d2d] rounded-full text-sm">
-          {tecnologia}
-        </span>
-      ))
-    }
+    <h3
+      class="text-xl font-bold font-display text-[var(--accent)] transition-colors duration-300 leading-tight"
+    >
+      {proyecto.nombreProyecto}
+    </h3>
   </div>
 
-  <div class="flex gap-4">
+  <div
+    class="relative overflow-hidden rounded-xl mb-6 aspect-video border border-[var(--border-subtle)] bg-[var(--bg-body)]"
+  >
+    <img
+      src={proyecto.img}
+      alt={proyecto.nombreProyecto}
+      class="w-full h-full object-cover group-hover:scale-105 transition-all duration-700"
+      loading="lazy"
+    />
+    <div
+      class="absolute inset-0 bg-gradient-to-t from-[var(--bg-body)] via-transparent to-transparent opacity-40"
+    >
+    </div>
+  </div>
+
+  <p
+    class="text-[var(--text-secondary)] font-light leading-relaxed mb-6 flex-grow"
+  >
+    {proyecto.descripcion}
+  </p>
+
+  <div class="flex flex-wrap gap-2 mb-8">
+    {proyecto.stack.map((tecnologia) => <Badge tecnologia={tecnologia} />)}
+  </div>
+
+  <div class="flex items-center gap-6 mt-auto">
     <a
       href={proyecto.linkDetalle}
-      class="flex items-center text-[#51F9F1] hover:text-[#48bcb6] transition-colors before:absolute before:inset-0"
+      class="flex items-center text-sm font-medium text-[var(--accent)] hover:text-white transition-colors duration-300 before:absolute before:inset-0 group/link"
     >
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        class="w-5 h-5 mr-1"
-        fill="currentColor"
-        viewBox="0 0 20 20"
-      >
-        <path
-          d="M10 3a2 2 0 110 4 2 2 0 010-4zm0 5a2 2 0 110 4 2 2 0 010-4zm0 5a2 2 0 110 4 2 2 0 010-4z"
-        ></path>
-      </svg>
-      Más
+      <span class="relative z-10 flex items-center">
+        Ver detalles
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          class="w-4 h-4 ml-1 transform group-hover/link:translate-x-1 transition-transform"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+        </svg>
+      </span>
     </a>
-    {
-      proyecto.hasRepositorio && (
-        <a
-          href={proyecto.linkRepositorio}
-          target="_blank"
-          class="flex items-center text-[#51F9F1] hover:text-[#48bcb6] transition-colors relative z-10"
-        >
-          <GithubIcon class="w-5 h-5 mr-1" />
-          Código
-        </a>
-      )
-    }
-    {
-      proyecto.hasLink && (
-        <a
-          href={proyecto.linkSitioWeb}
-          target="_blank"
-          class="flex items-center text-[#51F9F1] hover:text-[#48bcb6] transition-colors relative z-10"
-        >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            class="w-5 h-5 mr-1"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke="currentColor"
+
+    <div class="flex items-center gap-4 relative z-20">
+      {
+        proyecto.hasRepositorio && (
+          <a
+            href={proyecto.linkRepositorio}
+            target="_blank"
+            title="Código fuente"
+            class="text-[var(--text-secondary)] hover:text-[var(--accent)] transition-colors p-1"
           >
-            <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="2"
-              d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
-            />
-          </svg>
-          Ir al sitio
-        </a>
-      )
-    }
+            <GithubIcon class="w-5 h-5" />
+          </a>
+        )
+      }
+      {
+        proyecto.hasLink && (
+          <a
+            href={proyecto.linkSitioWeb}
+            target="_blank"
+            title="Ir al sitio web"
+            class="text-[var(--text-secondary)] hover:text-[var(--accent)] transition-colors p-1"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="w-5 h-5"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
+              />
+            </svg>
+          </a>
+        )
+      }
+    </div>
   </div>
 </div>

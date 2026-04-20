@@ -1,5 +1,6 @@
 ---
 import Layout from "@/layouts/Layout.astro";
+import Badge from "@/components/Badge.astro";
 ---
 
 <Layout title="Portafolio Luis Tapia">
@@ -11,12 +12,11 @@ import Layout from "@/layouts/Layout.astro";
       <div
         class="flex flex-wrap gap-2 mb-8 justify-center text-lg text-gray-300"
       >
-        <span class="px-3 py-1 bg-[#2d2d2d] rounded-full text-sm"
-          >Fullstack Developer</span
-        >
-        <span class="px-3 py-1 bg-[#2d2d2d] rounded-full text-sm">React</span>
-        <span class="px-3 py-1 bg-[#2d2d2d] rounded-full text-sm">NestJS</span>
-        <span class="px-3 py-1 bg-[#2d2d2d] rounded-full text-sm">MySQL</span>
+        <Badge tecnologia="Fullstack" />
+        <Badge tecnologia="React" />
+        <Badge tecnologia="NestJS" />
+        <Badge tecnologia="MySQL" />
+        <Badge tecnologia="Kanban" />
       </div>
       <img
         src="/static/TallerCastillo.jpeg"

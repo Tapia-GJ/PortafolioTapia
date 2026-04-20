@@ -1,4 +1,5 @@
 ---
+import Badge from "@/components/Badge.astro";
 import Layout from "@/layouts/Layout.astro";
 ---
 
@@ -9,30 +10,23 @@ import Layout from "@/layouts/Layout.astro";
         PADI - Gestión de Proyectos
       </h1>
       <div class="flex justify-center mb-4">
-        <span class="px-3 py-1 rounded-full text-sm font-medium text-gray-300">
+        <span
+          class="px-3 py-1 rounded-full text-center text-sm font-medium text-gray-300"
+        >
           Experiencia Profesional · Paredes y Asociados Constructores
         </span>
       </div>
       <div
         class="flex flex-wrap gap-2 mb-8 justify-center text-lg text-gray-300"
       >
-        <span class="px-3 py-1 bg-[#2d2d2d] rounded-full text-sm"
-          >Fullstack</span
-        >
-        <span class="px-3 py-1 bg-[#2d2d2d] rounded-full text-sm">React</span>
-        <span class="px-3 py-1 bg-[#2d2d2d] rounded-full text-sm"
-          >TypeScript</span
-        >
-        <span class="px-3 py-1 bg-[#2d2d2d] rounded-full text-sm"
-          >TailwindCSS</span
-        >
-        <span class="px-3 py-1 bg-[#2d2d2d] rounded-full text-sm"
-          >Shadcn/ui</span
-        >
-        <span class="px-3 py-1 bg-[#2d2d2d] rounded-full text-sm">Node.js</span>
-        <span class="px-3 py-1 bg-[#2d2d2d] rounded-full text-sm">Express</span>
-        <span class="px-3 py-1 bg-[#2d2d2d] rounded-full text-sm">API REST</span
-        >
+        <Badge tecnologia="Fullstack" />
+        <Badge tecnologia="React" />
+        <Badge tecnologia="TypeScript" />
+        <Badge tecnologia="TailwindCSS" />
+        <Badge tecnologia="Shadcn/ui" />
+        <Badge tecnologia="Node.js" />
+        <Badge tecnologia="Express" />
+        <Badge tecnologia="API REST" />
       </div>
 
       <img

@@ -1,4 +1,5 @@
 ---
+import Badge from "@/components/Badge.astro";
 import Layout from "@/layouts/Layout.astro";
 ---
 
@@ -11,21 +12,12 @@ import Layout from "@/layouts/Layout.astro";
       <div
         class="flex flex-wrap gap-2 mb-8 justify-center text-lg text-gray-300"
       >
-        <span class="px-3 py-1 bg-[#2d2d2d] rounded-full text-sm"
-          >Fullstack</span
-        >
-        <span class="px-3 py-1 bg-[#2d2d2d] rounded-full text-sm"
-          >TypeScript</span
-        >
-        <span class="px-3 py-1 bg-[#2d2d2d] rounded-full text-sm">React</span>
-        <span class="px-3 py-1 bg-[#2d2d2d] rounded-full text-sm"
-          >TailwindCSS</span
-        >
-        <span class="px-3 py-1 bg-[#2d2d2d] rounded-full text-sm">Supabase</span
-        >
-        <span class="px-3 py-1 bg-[#2d2d2d] rounded-full text-sm"
-          >Mercado Pago</span
-        >
+        <Badge tecnologia="Fullstack" />
+        <Badge tecnologia="TypeScript" />
+        <Badge tecnologia="React" />
+        <Badge tecnologia="TailwindCSS" />
+        <Badge tecnologia="Supabase" />
+        <Badge tecnologia="Mercado Pago" />
       </div>
 
       <img
