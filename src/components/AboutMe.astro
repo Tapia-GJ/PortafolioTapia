@@ -4,37 +4,112 @@
 
 <section
   id="sobre-mi"
-  class="w-full mx-auto lg:w-[744px] py-8 flex flex-col md:flex-row items-center gap-12"
+  class="w-full mx-auto lg:w-[900px] py-8 flex flex-col md:flex-row items-start gap-12 relative"
 >
-  <div class="flex-1 text-gray-300 space-y-6">
-    <h2 class="text-3xl font-light text-[#51F9F1]">Sobre Mí</h2>
+  <div class="flex-[1.5] space-y-8">
+    <div class="space-y-2">
+      <h2 class="text-4xl font-bold text-white">
+        Sobre <span class="text-[var(--accent)] not-italic">Mí</span>
+      </h2>
+      <div class="h-1 w-20 bg-[var(--accent)] rounded-full"></div>
+    </div>
 
-    <p>
-      Soy <span class="text-white font-medium"
-        >Ingeniero en Software recién egresado</span
-      > enfocado en el desarrollo <span class="text-[#51F9F1]">Full-Stack</span
-      >. Mi base técnica combina la robustez de <span class="text-white"
-        >.NET/C# y SQL Server</span
-      > con la agilidad de interfaces modernas en <span class="text-white"
-        >React y Angular</span
-      >, siempre priorizando la creación de soluciones eficientes y escalables.
-    </p>
+    <div
+      class="text-lg leading-relaxed text-[var(--text-secondary)] font-light space-y-6"
+    >
+      <p class="">
+        Soy <span class="text-white font-medium">desarrollador de software</span
+        > con enfoque en desarrollo <span
+          class="font-mono text-[var(--accent)] text-base">web full-stack</span
+        >. He trabajado en proyectos utilizando tecnologías como <span
+          class="text-[var(--text-primary)] border-b border-[var(--border-accent)]"
+          >React, TypeScript, Tailwind, Express y MySQL</span
+        >, construyendo aplicaciones funcionales y centradas en la experiencia
+        del usuario.
+      </p>
 
-    <p>
-      Me apasiona explorar el potencial de los <span class="text-[#51F9F1]"
-        >agentes de IA</span
-      > y disfruto del dibujo en mi tiempo libre. Esta combinación de curiosidad tecnológica
-      y veta creativa me permite abordar los desafíos técnicos con una mirada detallista,
-      buscando siempre el equilibrio entre un código sólido y una gran experiencia
-      de usuario.
-    </p>
+      <p>
+        Me interesa no solo programar, sino entender cómo crear <span
+          class="text-[var(--text-primary)]">software de calidad</span
+        >, aplicando <span
+          class="underline decoration-[var(--border-accent)] decoration-2 underline-offset-4"
+          >buenas prácticas</span
+        > y mejorando constantemente mi forma de desarrollar.
+      </p>
+
+      <p class="relative z-10">
+        Actualmente estoy enfocado en cómo la <span class="text-white"
+          >inteligencia artificial</span
+        > puede potenciar el desarrollo de software: desde <span
+          class="text-[var(--accent)]">automatización de tareas</span
+        > hasta <span class="text-[var(--accent)]"
+          >optimización de procesos</span
+        >.
+      </p>
+
+      <p>
+        Me considero una persona <span class="text-white">práctica</span>, que
+        aprende haciendo y que busca crecer profesionalmente dentro de un
+        entorno donde pueda aportar y seguir desarrollando sus habilidades
+        técnicas.
+      </p>
+    </div>
   </div>
 
-  <div class="flex-1 flex justify-center">
-    <img
-      src="https://github.com/Tapia-GJ.png"
-      alt="Luis Mario Tapia Rendón"
-      class="w-56 h-56 rounded-2xl object-cover shadow-lg"
-    />
+  <div class="flex-1 sticky top-24">
+    <div class="relative group">
+      <!-- Marco decorativo -->
+      <div
+        class="absolute -inset-4 border border-[var(--border-accent)] opacity-20 rounded-3xl group-hover:opacity-40 transition-all duration-700 -z-10 group-hover:rotate-3"
+      >
+      </div>
+      <div
+        class="absolute -inset-1 bg-gradient-to-tr from-[var(--accent)] to-transparent opacity-10 blur-xl group-hover:opacity-20 transition-all duration-700"
+      >
+      </div>
+
+      <div
+        class="relative overflow-hidden rounded-2xl aspect-square border border-[var(--border-subtle)]"
+      >
+        <img
+          src="https://github.com/Tapia-GJ.png"
+          alt="Luis Mario Tapia Rendón"
+          class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700 scale-105 group-hover:scale-100"
+        />
+        <div
+          class="absolute inset-0 bg-gradient-to-t from-[var(--bg-body)] via-transparent to-transparent opacity-60"
+        >
+        </div>
+      </div>
+    </div>
   </div>
 </section>
+
+<style>
+  p {
+    opacity: 0;
+    transform: translateY(10px);
+    animation: fadeInUp 0.8s ease forwards;
+  }
+
+  p:nth-child(1) {
+    animation-delay: 0.1s;
+  }
+  p:nth-child(2) {
+    animation-delay: 0.3s;
+  }
+  .p-6 {
+    animation: fadeInUp 0.8s ease forwards;
+    animation-delay: 0.5s;
+  }
+  p:nth-child(4) {
+    animation-delay: 0.7s;
+  }
+
+  @keyframes fadeInUp {
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+</style>
