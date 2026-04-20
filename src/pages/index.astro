@@ -1,10 +1,9 @@
 ---
 import Layout from "@/layouts/Layout.astro";
-import LinkedinIcon from "@/components/icons/linkedin.astro";
-import GithubIcon from "@/components/icons/github.astro";
 import ProyectoCard from "@/components/projectsCards.astro";
 import type { Proyecto } from "@/types/project";
-
+import AboutMe from "@/components/AboutMe.astro";
+import Hero from "@/components/Hero.astro";
 const Proyectos: Proyecto[] = [
   {
     id: "1",
@@ -106,81 +105,18 @@ const Proyectos: Proyecto[] = [
 ---
 
 <Layout title="Portafolio Luis Tapia">
-  <main class="pb-12 px-4">
-    <section
-      class="w-full min-h-screen mx-auto lg:w-3/4 flex flex-col justify-center"
-    >
-      <h2
-        class="text-7xl font-light flex justify-center text-center flex-row text-[#51F9F1]"
-      >
-        Software Developer
-      </h2>
-      <h1 class="text-8xl font-light flex justify-center text-center">
-        Luis Mario Tapia Rendón
-      </h1>
-      <div class="mt-4 flex mx-auto w-full justify-center gap-6">
-        <a href="https://www.linkedin.com/in/luis-tapia-aaa2691a3/"
-          ><LinkedinIcon class="size-14 rounded-full" /></a
-        >
-        <a href="https://github.com/Tapia-GJ"
-          ><GithubIcon class="size-14 rounded-full" /></a
-        >
-        <!-- <GmailIcon class="size-14" /> -->
-      </div>
-      <div class="m-6 flex mx-auto w-full justify-center gap-6">
-        <a
-          href="/static/LuisTapiaCV.pdf"
-          target="_blank"
-          class="text-black h-10 w-40 font-medium bg-[#51F9F1] hover:bg-[#48bcb6] rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center"
-        >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="14"
-            height="14"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            class="mr-2 icon icon-tabler icons-tabler-outline icon-tabler-download"
-          >
-            <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-            <path d="M4 17v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2 -2v-2"></path>
-            <path d="M7 11l5 5l5 -5"></path>
-            <path d="M12 4l0 12"></path>
-          </svg>
-          Descargar CV
-        </a>
-        <a
-          href="https://wa.me/529981556550?text=Hola%20Luis%2C%20vi%20tu%20portafolio%20y%20me%20gustar%C3%ADa%20contactarte"
-          target="_blank"
-          class="text-black h-10 w-40 font-medium bg-[#51F9F1] hover:bg-[#48bcb6] rounded-lg text-sm px-5 py-2.5 text-center justify-center inline-flex items-center"
-        >
-          Contáctame
-          <svg
-            class="rtl:rotate-180 w-3.5 h-3.5 ms-2"
-            aria-hidden="true"
-            xmlns="http://www.w3.org/2000/svg"
-            fill="none"
-            viewBox="0 0 14 10"
-          >
-            <path
-              stroke="currentColor"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="2"
-              d="M1 5h12m0 0L9 1m4 4L9 9"></path>
-          </svg>
-        </a>
-      </div>
-    </section>
+  <main class="pb-12">
+    <!-- Hero -->
+    <Hero />
+    <!-- Sobre Mí -->
+    <AboutMe />
+
     <!-- Proyectos -->
-    <section id="proyectos" class="w-full mx-auto lg:w-[740px] py-8">
-      <h1 class="text-3xl font-light mb-8">Proyectos</h1>
+    <section id="proyectos" class="w-full mx-auto lg:w-[744px] py-8">
+      <h1 class="text-3xl font-light mb-6">Proyectos</h1>
 
       <!-- Filtros -->
-      <div class="flex gap-3 mb-8" id="filtros-proyectos">
+      <div class="flex gap-3 mb-6" id="filtros-proyectos">
         <button
           data-filter="todos"
           class="filter-btn px-4 py-2 rounded-full text-sm font-medium transition-all bg-[#51F9F1] text-black"
